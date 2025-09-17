@@ -1,0 +1,26 @@
+{
+  "name": "Raspberry Pi Keyboard Dev",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-python.python",
+        "charliermarsh.ruff",
+        "rooveterinaryinc.roo-cline"
+      ],
+      "settings": {
+        "files.eol": "\n",
+        "editor.tabSize": 4,
+        "editor.formatOnSave": true,
+        "editor.defaultFormatter": "charliermarsh.ruff"
+      }
+    }
+  },
+  "forwardPorts": [8080],
+  "mounts": [
+    "source=/tmp/roo-cline-storage,target=/root/.config/rooveterinaryinc.roo-cline,type=bind,consistency=cached"
+  ],
+  "remoteUser": "root"
+}
